@@ -1,6 +1,9 @@
 def get_column(data):
     column_name = []
-    return column_name
+    for i in data:
+        column_name.append(i.split(",")[-1])
 
-data = open('data.csv').read()
-print(type(data))
+    return column_name
+data = open('data.csv').read() 
+data=data.split("\n")
+print(get_column(data))
